@@ -1,0 +1,12 @@
+import type { NextConfig } from "next";
+/** @type {import('next').NextConfig} */
+const nextConfig: NextConfig = {
+  output: 'export',
+  trailingSlash: true,
+  poweredByHeader: false,
+  devIndicators: {
+    buildActivity: false
+  },
+};
+
+module.exports = nextConfig;

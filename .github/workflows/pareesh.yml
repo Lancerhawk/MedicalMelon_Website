@@ -1,0 +1,56 @@
+name: ATS Website Build Deploy
+run-name: Deploy ATS Website to ${{ inputs.environment }} by ${{ github.actor }}
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to deploy'
+        required: true
+        default: 'production'
+        type: choice
+        options:
+          - production
+          
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest # Or your desired runner, ubuntu-latest is generally good
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4 # Action to checkout your repository code
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20' # Ensure this matches your project's compatible Node.js version
+          cache: 'npm' # Cache npm dependencies for faster builds (can also use 'yarn' or 'pnpm')
+          
+      - name: Cache node_modules
+        id: cache-npm
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('package.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install Dependencies
+        run: npm install --legacy-peer-deps # Use --legacy-peer-deps if needed, otherwise 'npm install'
+
+      - name: Build Next.js Static App
+        # This command will generate the static files in the 'out/' directory
+        # because of the 'output: "export"' configuration in your next.config.js.
+        run: npm run build
+
+
+      - name: Setup SSH keys for EC2 access
+        # This step sets up the SSH key and adds the host to known_hosts
+        # for subsequent SSH/SCP/Rsync commands.
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.EC2_SSH_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H 3.84.225.246 >> ~/.ssh/known_hosts
+          ssh -i ~/.ssh/id_rsa ec2-user@3.84.225.246 "sudo rm -rf /home/ec2-user/ats-website/out/*"
+          rsync -avz -e "ssh -i ~/.ssh/id_rsa" out/ ec2-user@3.84.225.246:/home/ec2-user/ats-website/out/
