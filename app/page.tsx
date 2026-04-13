@@ -69,7 +69,7 @@ function HeroSection() {
             <div className="mt-8 flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
               <Link
                 className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-blue-700 bg-white hover:bg-blue-50 md:text-lg"
-                href={`${process.env.NEXT_PUBLIC_APP_URL}/login`}
+                href={`${process.env.NEXT_PUBLIC_APP_URL}/signup`}
               >
                 Sign Up
               </Link>
@@ -166,7 +166,7 @@ function CTASection() {
           <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-end">
             <Link
               className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-blue-700 bg-white hover:bg-blue-50"
-              href={`${process.env.NEXT_PUBLIC_APP_URL}/login`}
+              href={`${process.env.NEXT_PUBLIC_APP_URL}/signup`}
             >
               Sign Up Now
             </Link>

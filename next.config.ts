@@ -6,4 +6,4 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
 };
 
-module.exports = nextConfig;
+export default nextConfig;

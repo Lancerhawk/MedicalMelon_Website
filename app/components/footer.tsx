@@ -37,7 +37,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link className="text-gray-400 hover:text-white text-sm" href={`${process.env.NEXT_PUBLIC_APP_URL}/login`}>
+                <Link className="text-gray-400 hover:text-white text-sm" href={`${process.env.NEXT_PUBLIC_APP_URL}/signup`}>
                   Create Account
                 </Link>
               </li>

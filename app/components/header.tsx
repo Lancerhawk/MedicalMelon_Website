@@ -33,6 +33,12 @@ export default function Header() {
             >
               Login
             </Link> 
+            <Link
+              className="bg-blue-600 text-white hover:bg-blue-700 px-4 py-2 rounded-md text-sm font-medium transition-colors"
+              href={`${process.env.NEXT_PUBLIC_APP_URL}/signup`}
+            >
+              Sign Up
+            </Link>
             
           </div>
           <div className="flex items-center sm:hidden">
@@ -55,13 +61,22 @@ export default function Header() {
         >
           <div className="px-2 pt-2 pb-3 space-y-1">
             
-            <Link
-              onClick={toggleMobileMenu}
-              href={`${process.env.NEXT_PUBLIC_APP_URL}/login`}
-              className="block py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
-            >
-              Login
-            </Link>
+            <div className="flex flex-col space-y-2 pt-2">
+              <Link
+                onClick={toggleMobileMenu}
+                href={`${process.env.NEXT_PUBLIC_APP_URL}/login`}
+                className="block py-2 px-3 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 border border-gray-100"
+              >
+                Login
+              </Link>
+              <Link
+                onClick={toggleMobileMenu}
+                href={`${process.env.NEXT_PUBLIC_APP_URL}/signup`}
+                className="block py-2 px-3 rounded-md text-base font-medium bg-blue-600 text-white hover:bg-blue-700"
+              >
+                Sign Up
+              </Link>
+            </div>
             
           </div>
         </div>
