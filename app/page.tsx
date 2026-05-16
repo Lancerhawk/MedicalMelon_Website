@@ -190,7 +190,7 @@ function VideoMarketingSection() {
                 Find US Jobs
               </Link>
               <Link
-                href={`${process.env.NEXT_PUBLIC_APP_URL}/dashboard`}
+                href={`${process.env.NEXT_PUBLIC_APP_URL}/login`}
                 className="inline-flex items-center justify-center px-8 py-4 bg-white text-gray-900 font-bold rounded-xl border-2 border-gray-200 hover:border-blue-600 hover:text-blue-600 transition-all"
               >
                 Post a Job - $20

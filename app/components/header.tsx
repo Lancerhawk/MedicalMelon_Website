@@ -40,7 +40,7 @@ export default function Header() {
 
           <div className="flex-1 flex justify-center px-1 sm:px-4 overflow-hidden">
             <Link
-              href={`${process.env.NEXT_PUBLIC_APP_URL}/dashboard`}
+              href={`${process.env.NEXT_PUBLIC_APP_URL}/login`}
               className="bg-[#e11d48] text-white px-3 py-1.5 sm:px-5 sm:py-2 rounded-md text-[10px] sm:text-xs md:text-sm font-semibold transition-colors hover:bg-[#be123c] flex items-center justify-center min-w-0 w-full max-w-[200px] sm:max-w-[400px] h-9 sm:h-10 shadow-sm"
             >
               <div className="relative w-full h-full overflow-hidden">
@@ -111,7 +111,7 @@ export default function Header() {
             <div className="flex flex-col space-y-2 pt-2">
               <Link
                 onClick={toggleMobileMenu}
-                href={`${process.env.NEXT_PUBLIC_APP_URL}/dashboard`}
+                href={`${process.env.NEXT_PUBLIC_APP_URL}/login`}
                 className="flex items-center justify-center gap-3 py-3 px-4 rounded-md text-base font-semibold bg-[#e11d48] text-white shadow-sm transition-colors active:bg-[#be123c]"
               >
                 <span className="relative flex h-2 w-2 shrink-0">
