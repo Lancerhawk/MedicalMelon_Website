@@ -3,8 +3,8 @@ import { Icon } from "@iconify/react";
 
 const PAGE_DATA = {
   hero: {
-    title: "Find Your Perfect Career Match",
-    description: "Connect with top employers and discover opportunities that align with your skills and ambitions.",
+    title: "Post a Job and Hire Top Healthcare Talent",
+    description: "Streamline your recruitment process with Medical Melon. Reach thousands of qualified healthcare professionals, manage applications, and hire the best talent for your team.",
     image: {
       url: "/hero_image.webp",
       description: "Professional working on a laptop"
@@ -18,14 +18,6 @@ const PAGE_DATA = {
       reverse: false,
       buttonText: "Explore Jobs",
       link: "/search"
-    },
-    {
-      title: "Post a Job and Hire Top Healthcare Talent",
-      description: "Streamline your recruitment process with Medical Melon. Reach thousands of qualified healthcare professionals, manage applications, and hire the best talent for your team.",
-      image: "/hero_image.webp",
-      reverse: true,
-      buttonText: "Post a Job",
-      link: "/signup"
     }
   ],
   steps: {
@@ -260,7 +252,7 @@ function MarqueeSection() {
           {items.map((item, i) => (
             <div key={i} className="flex items-center gap-3">
               <div className="w-1.5 h-1.5 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.8)]" />
-              <span className="text-gray-100 text-sm md:text-base font-bold tracking-wide uppercase italic">
+              <span className="text-gray-100 text-sm md:text-base font-bold tracking-wide uppercase">
                 {item}
               </span>
             </div>
@@ -271,7 +263,7 @@ function MarqueeSection() {
           {items.map((item, i) => (
             <div key={i} className="flex items-center gap-3">
               <div className="w-1.5 h-1.5 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.8)]" />
-              <span className="text-gray-100 text-sm md:text-base font-bold tracking-wide uppercase italic">
+              <span className="text-gray-100 text-sm md:text-base font-bold tracking-wide uppercase">
                 {item}
               </span>
             </div>
